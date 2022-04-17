@@ -1,0 +1,285 @@
+/* font google */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* body */
+
+body {
+  /* font-family: 'Noto Kufi Arabic', sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #161c20;
+  overflow-y: auto;
+  -webkit-tap-highlight-color: transparent;
+  font-weight: 500;
+  white-space: normal;
+  background: #00B4DB;  /* fallback for old browsers */  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/* variables */
+
+:root {
+  --main-transition: 0.2s;
+  --dark-blue-color: #0875d5;
+  --bg-footer-black: #161c20;
+  --bg-facebook: #3b5998;
+  --border-input: #cad0d5;
+  --gradient-overlay: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+  --relax-green: #29c187;
+  --shadow-btn: 0 6px 25px -25px #000;
+  --light-yellow: #fcfcc5;
+  --light-green: #d9eee1;
+  --light-red: #fcbcc3;
+  --light-bleu: #bcdbfc;
+  --red-danger: #d12727;
+  --purple: #5466cb;
+  --shadow-for-btn: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.scroll-to-top{
+  height: 40px;
+  cursor: pointer;
+  width: 40px;
+  background: #0f8cfa;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 50%;
+}
+
+/* area */
+
+.area{
+  background: white;
+  border: 1px solid #ddd;
+  width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* up bar */
+
+.up-bar{
+  border-bottom: 1px solid #dedede;
+  overflow: auto;
+  word-break: none !important;
+  white-space: nowrap;
+}
+.up-bar .item{
+  font-size: 15px !important;
+  color: #606060;
+  position: relative;
+}
+.up-bar .item.active::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: #0f8cfa;
+  color: #0f8cfa;
+}
+.up-bar .item.active{
+  color: #0f8cfa;
+}
+.item-bar{
+  display: none;
+}
+.item-bar.active{
+  display: block;
+}
+
+/* add mission part */
+.mgb-10{
+  margin-bottom: 10px;
+}
+.input-field input{
+  height: 45px;
+  border: 2px solid #ddd !important;
+  transition: .2s all;
+}
+.separe{
+  border-bottom: 1px solid #ededed;
+  padding: 10px 0;
+}
+.input-field input:focus{
+  border-color: #0f8cfa !important;
+}
+.gray-color{
+  color: #606060;
+}
+
+/* select colors */
+
+.select-colors .list-of-colors .couvert{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    opacity: .5;
+    cursor: pointer;
+}
+.select-colors .list-of-colors .item.active{
+    border: 2px solid #0f8cfa;
+    opacity: .8;
+}
+.select-colors .list-of-colors .item.active .couvert{
+    opacity: 1;
+}
+.select-colors .list-of-colors .item{
+    padding: 3px;
+    border-radius: 50%;
+}
+
+/* importance */
+
+.importance .select-import .item{
+  padding: 3px 10px;
+  cursor: pointer;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  transition: all .2s;
+}
+
+.importance .select-import .item.active{
+  border-color: #0974d2;
+  color: #0974d2;
+}
+
+/* duration */
+
+.duration .col-item select{
+    border: 1px solid #ddd;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+}
+.duration .col-item{
+  flex-basis: 50%;
+  height: 40px;
+}
+.duration .col-item input{
+  height: 100%;
+  width: 100%;
+  border-radius: .25rem;
+  border: 1px solid #ddd;
+}
+
+/* description */
+
+.description .desc-text textarea{
+  border: 1px solid #ddd !important;
+  min-height: 100px;
+}
+
+/* add btn */
+
+.add-btn button{
+  min-height: 50px;
+}
+.loader{
+  border: 3px solid #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border-left-color: transparent;
+  -webkit-animation: spinner 800ms linear infinite;
+          animation: spinner 800ms linear infinite;
+}
+@-webkit-keyframes spinner {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+@keyframes spinner {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+/* pending misisons */
+
+.pending .clear button,.completed-missions .clear button{
+  font-size: 14px !important;
+  padding: 3px 10px !important;
+  border-radius: .25rem;
+  font-weight: 600;
+}
+
+.pending .ul-list-pending li,.completed-missions .ul-list-completed li{
+  background: #f7f7f7;
+}
+.pending .ul-list-pending li,.completed-missions .ul-list-completed li .text{
+  padding: 10px 15px;
+}
+.pending .ul-list-pending li .icons span.hover-text,.completed-missions .ul-list-completed li .icons span.hover-text{
+  background: #101013;
+  color: #fff;
+  left: 48%;
+  transform: translate(-50%,-40px);
+  padding: 2px 6px;
+  border-radius: 2px;
+  bottom: 5px;
+  display: none;
+}
+.pending .ul-list-pending li .icons span.hover-text::before,.completed-missions .ul-list-completed li .icons span.hover-text::before{
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  content: "";
+  background: #101013;
+  z-index: -1;
+  left: 50%;
+  transform: rotate(45deg) translateX(-50%);
+  bottom: -5px;
+}
+.pending .ul-list-pending li .icons span.hover-text.active,.completed-missions .ul-list-completed li .icons span.hover-text.active{
+  display: block;
+  -webkit-animation: fade-in .2s ease forwards;
+          animation: fade-in .2s ease forwards;
+}
+@-webkit-keyframes fade-in {
+  from{opacity: 0;bottom: 6px;}
+  to{opacity: 1;bottom: 8px;}
+}
+
+@keyframes fade-in{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+.ul-list-pending li:hover,.ul-list-completed li:hover{
+  background: #ebebeb;
+}
+.ul-list-pending li,.ul-list-completed li{
+  transition: .2s all;
+}
+
+/* modal informations */
+
+.main-modal{
+  padding: 0 !important;
+  width: 400px;
+  max-width: 100%;
+}
+.ok-button:active{
+  background: #e5e5e5;
+}
+span.getSpan{
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50%;
+}
+/* error form */
+
+.error-form{
+  background: rgb(255, 229, 229);
+  color: red;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>more practice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/wspace.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/correct.css">
+</head>
+  <body class="flex align-center justify-center full-height-screen fd-col">
+    <div class="container full-width">
+    <div class="area pd-15 rounded">
+        <!-- main area -->
+        <main>
+          <div class="main-title">
+            <h3 class="capital">Todo</h3>
+            <p class="capital">make a plan to your day.</p>
+          </div>
+        <!-- up bar -->
+          <div class="up-bar mgy-half-1rem flex align-center">
+            <div class="item pdx-20 pdy-10 cursor active">add</div>
+            <div class="item pdx-20 pdy-10 cursor">pending</div>
+            <div class="item pdx-20 pdy-10 cursor">completed</div>
+          </div>
+        <!-- add a mission -->
+          <div class="add-mission item-bar active">
+            <!-- input-field -->
+            <div class="input-field separe">
+              <p class="mgb-4 gray-color">Mission Name</p>
+              <input dir="auto" type="text" name="" placeholder="anything..." id="mission-name" class="full-width rounded">
+            </div>
+            <!-- duration mission -->
+            <div class="duration separe">
+              <div class="title gray-color mgb-half-1rem">Duration</div>
+              <div class="list-ctrl flex align-center full-width">
+                <div class="col-item pdr-15">
+                  <select name="" class="caret" id="">
+                    <option value="min">minutes</option>
+                    <option value="h">hours</option>
+                  </select>
+                </div>
+                <div class="col-item">
+                  <input type="text" name="" placeholder="duration" id="duration-input">
+                </div>
+              </div>
+            </div>
+            <!-- importance -->
+            <div class="importance separe">
+              <div class="title gray-color mgb-half-1rem">Importance</div>
+              <div class="select-import flex flex-wrap">
+                <div class="item mgr-6 mgb-half-1rem active" data-imp="very important">very important</div>
+                <div class="item mgr-6 mgb-half-1rem" data-imp="important">important</div>
+                <div class="item mgr-6 mgb-half-1rem" data-imp="medium">medium</div>
+                <div class="item mgr-6 mgb-half-1rem" data-imp="not important">not important</div>
+              </div>
+            </div>
+            <!-- select colors -->
+            <div class="select-colors separe">
+              <div class="title mgb-half-1rem capital gray-color">add color</div>
+              <div class="list-of-colors flex flex-wrap align-center">
+                <div class="item mgr-1rem mgy-4 active" data-color="#0f8cfa">
+                  <div class="couvert bleu-bg"></div>
+                </div>
+                <div class="item mgr-1rem mgy-4" data-color="#fca120">
+                  <div class="couvert orange-bg"></div>
+                </div>
+                <div class="item mgr-1rem mgy-4" data-color="#edd42d">
+                  <div class="couvert yellow-bg"></div>
+                </div>
+                <div class="item mgr-1rem mgy-4" data-color="#5466cb">
+                  <div class="couvert purple-bg"></div>
+                </div>
+                <div class="item mgr-1rem mgy-4" data-color="#d53227">
+                  <div class="couvert red-bg"></div>
+                </div>
+                <div class="item mgr-1rem mgy-4" data-color="#101013">
+                  <div class="couvert black-bg"></div>
+                </div>
+              </div>
+            </div>
+            <!-- description -->
+            <div class="description separe" style="border: 0;">
+              <div class="title mgb-half-1rem flex flex-between align-center">
+                <div class="text-title-cont"><p class="gray-color">Add a details</p></div>
+                <p class="gray-color max-length pdl-10"><span id="max-length">0</span> / 150</p>
+              </div>
+              <div class="desc-text relative">
+                <textarea name="" dir="auto" id="desc-content" class="full-width rounded" placeholder="details"></textarea>
+              </div>
+            </div>
+            <div class="error-form d-none pd-10 mgb-half-1rem flex align-center" id="error-form">
+              <i class="fa fa-exclamation-triangle"></i>
+              <p class="pdl-10 p-mid">please fill all the inputs</p>
+            </div>
+            <!-- add btn -->
+            <div class="add-btn">
+              <button class="bleu-bg btn w-color rounded full-width" id="btn-add">
+                <i class="fa fa-plus"></i>
+                <span class="pdl-15 capital">add mission</span>
+              </button>
+            </div>
+          </div>
+
+        <!-- pending missions -->
+          <div class="pending mgt-2rem item-bar">
+            <!-- title -->
+            <div class="title-and-clear mgb-1h5rem separe flex align-center flex-between">
+              <div class="title o-hidden">
+                <h5 class="text-ellipsis">pending (<span id="numPending">5</span>)</h5>
+              </div>
+              <div class="clear">
+                <button id="clearPendings" class="btn capital bleu-bg w-color">clear</button>
+              </div>
+            </div>
+            <!-- menu missions -->
+            <ul class="ul-list-pending mgy-1rem" style="word-break: normal;">
+
+            </ul>
+            <div class="empty-list d-none" id="emptyTasks">
+                <div class="img mgx-auto" style="width: 90px;">
+                  <img src="images/empty.png" class="mgy-1rem" alt="">
+                </div>
+                <p class="p-small gray-color text-center fw-600">You don't have any missions pending!</p>
+            </div>
+          </div>
+          <!-- completed missions -->
+          <div class="completed-missions mgt-2rem item-bar">
+            <!-- title -->
+            <div class="title-and-clear mgb-1h5rem separe flex align-center flex-between">
+              <div class="title o-hidden">
+                <h5 class="text-ellipsis">completed (<span id="numCompleted">5</span>)</h5>
+              </div>
+              <div class="clear">
+                <button class="btn capital bleu-bg w-color" id="clearCompleted">clear</button>
+              </div>
+            </div>
+            <ul class="ul-list-completed mgy-1rem">
+            </ul>
+            <div class="empty-list d-none" id="emptyComleted">
+              <div class="img mgx-auto" style="width: 90px;">
+                <img src="images/completed.png" class="mgy-1rem" alt="">
+              </div>
+              <p class="p-small gray-color text-center fw-600">You don't have any missions completed!</p>
+          </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- modal informations list -->
+    <div class="parent-modal d-none" id="parentModal">
+      <div class="main-modal" id="mainModal">
+        <!-- title modal -->
+        <h3 class="line-clamp pdr-15 separe mgb-1rem pdx-15" id="task-name">watch a video game in the evening</h3>
+        <div class="details-modal-informations mgb-1rem pdx-15">
+          <h6>details</h6>
+          <p id="task-detail">I will watch a video game in the evening after the holiday</p>
+        </div>
+        <!-- more informations content -->
+        <div class="more-informations mgb-half-1rem pdx-15">
+          <h6>more-informations</h6>
+          <ul>
+            <li>
+              <p><span style="color: #0f8cfa;" class="fw-500">Duration: </span><!--get the span--> <span id="task-duration">15min</span></p>
+            </li>
+            <li>
+              <p><span style="color: #0f8cfa;" class="fw-500">importance: </span><!--get the span--> <span id="task-import">very important</span></p>
+            </li>
+            <li>
+              <p><span style="color: #0f8cfa;" class="fw-500">color: </span><!--get the span--><span id="taskColor" style="padding: 2px;" class="mgl-half-1rem">red</span></p>
+            </li>
+          </ul>
+        </div>
+        <!-- ok button -->
+        <div class="ok-button user-none text-center mgt-1rem pdy-15 cursor" style="border-top: 1px solid #ededed;">
+          <span class="gray-color">OK</span>
+        </div>
+      </div>
+    </div>
+    <div class="testing" data-color="ahmed">
+
+    </div>
+  </body>
+  <script src="js/script.js"></script>
+</html>
